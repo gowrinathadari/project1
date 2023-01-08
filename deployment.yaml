@@ -19,6 +19,7 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+---
 # Service Object To Access Application
 apiVersion: v1
 kind: Service
