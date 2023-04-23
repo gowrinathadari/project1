@@ -17,8 +17,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: gowrinth225/myapp-3.5:latest
-        imagePullPolicy: Always
+        image: gowrinth225/myapp-3.5
         ports:
         - containerPort: 8080
 ---
@@ -28,11 +27,12 @@ kind: Service
 metadata:
   name: myapp-service
 spec:
-  type: LoadBalancer
+ selector:
+    app.kubernetes.io/name: myapp
   ports:
-  - port: 80
-    targetPort: 8080
-  selector:
-    app: myapp
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  
         
   
