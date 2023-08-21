@@ -33,6 +33,7 @@ pipeline {
             steps {
                 slackSend channel: 'jenkins', message: '"started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"', teamDomain: 'jenkins', tokenCredentialId: 'slack-jenkins'
             }
+        }
     }
     post {
         always {
