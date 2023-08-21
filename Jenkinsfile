@@ -31,7 +31,7 @@ pipeline {
         }
     }
     post {
-        alwasys {
+        always {
             mail bcc: '', body: """project:${env.JOB_NAME} Build Number:${env.BUILD_NUMBER} url:${env.BUILD_URL} """, cc: '', from: '', replyTo: '', subject: 'Jenkins Build Status', to: 'gowrinath225@gmail.com'
         }
     }
